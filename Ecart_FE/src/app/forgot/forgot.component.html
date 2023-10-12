@@ -1,0 +1,109 @@
+<!-- 
+
+<div class="image">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-center mb-4">Change Password</h2>
+            <form [formGroup]="passwordForm">
+              <div class="form-group">
+                <label for="oldPassword">Old Password</label>
+                <input type="password" name="oldPassword" class="form-control" formControlName="oldPassword">
+                <div class="error"
+                  *ngIf="passwordForm.get('oldPassword').invalid && (passwordForm.get('oldPassword').dirty || passwordForm.get('oldPassword').touched)">
+                  Old password is required</div>
+              </div>
+
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" name="newPassword" class="form-control" formControlName="newPassword">
+                <div class="error"
+                  *ngIf="passwordForm.get('newPassword').invalid && (passwordForm.get('newPassword').dirty || passwordForm.get('newPassword').touched)">
+                  <div *ngIf="passwordForm.get('newPassword').errors.required">New password is required</div>
+                  <div *ngIf="passwordForm.get('newPassword').errors.minlength">New password must be at least 6
+                    characters long</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" formControlName="confirmPassword">
+                <div class="error"
+                  *ngIf="passwordForm.get('confirmPassword').invalid && (passwordForm.get('confirmPassword').dirty || passwordForm.get('confirmPassword').touched)">
+                  <div *ngIf="passwordForm.get('confirmPassword').errors.required">Confirm password is required</div>
+                  <div *ngIf="passwordForm.hasError('passwordsNotMatched')">Passwords do not match</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="error">{{errorMsg}}</div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-block"
+                  [disabled]="passwordForm.invalid || passwordForm.hasError('passwordsNotMatched')"
+                  (click)="updatePassword()">Update Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="image">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-center mb-4">Change Password</h2>
+            <form [formGroup]="passwordForm">
+              <div class="form-group">
+                <label for="oldPassword">Old Password</label>
+                <input type="password" name="oldPassword" class="form-control" formControlName="oldPassword">
+                <div class="error"
+                  *ngIf="passwordForm.get('oldPassword').invalid && (passwordForm.get('oldPassword').dirty || passwordForm.get('oldPassword').touched)">
+                  Old password is required</div>
+              </div>
+
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" name="newPassword" class="form-control" formControlName="newPassword">
+                <div class="error">
+                <span *ngIf="password && password.invalid && password.touched" class="error-message">Password Required</span>
+                <span *ngIf="passwordForm.get('newPassword').hasError('Mustmatch')" class="error-message">Password is Minimum 4 Digits</span>
+              </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" formControlName="confirmPassword">
+                <div class="error">
+                <span *ngIf="confirmPassword && confirmPassword.invalid && confirmPassword.touched" class="error-message">Confirm Password is Required</span>
+                <span *ngIf="passwordForm.get('confirmPassword').hasError('Mustmatch')" class="error-message">Password Miss Match</span>
+</div>
+
+              </div>
+
+              <div class="form-group">
+                <div class="error">{{errorMsg}}</div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-block"
+                  [disabled]="passwordForm.invalid || passwordForm.hasError('passwordsNotMatched')"
+                  (click)="updatePassword()">Update Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

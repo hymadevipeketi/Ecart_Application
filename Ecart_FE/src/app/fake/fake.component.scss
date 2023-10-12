@@ -1,0 +1,72 @@
+.progress-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .loading-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
+  p{
+    // font-weight: bolder;
+  }
+
+
+
+
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-container {
+    width: 300px;
+    height: 450px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .card h6,
+  .card h3,
+  .card h4,
+  .card p {
+    margin: 10px;
+  }
+  
+  .card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .card button:hover {
+    background-color: #3E8E41;
+  }

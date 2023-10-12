@@ -1,0 +1,14 @@
+
+<app-header></app-header>
+
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <img *ngFor="let image of images" [src]="image"[routerLink]="'/header'">
+    </div>
+  </div>
+
+  
+  <!-- <div class="sample">
+    <img src="assets/shop.png">
+  </div> -->
+  

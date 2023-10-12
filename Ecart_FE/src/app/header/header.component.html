@@ -1,0 +1,66 @@
+
+<!-- <app-header></app-header> -->
+<header>
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand align-items-center d-flex" href="#"> -->
+        <img style="zoom: 70%;" src="/assets/o123.png" width="30" height="30" alt="Shopaholic Logo">
+        <span class="ms-2 fw-bold"><i>Shopaholic</i></span>
+      <!-- </a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <!-- <ul class="navbar-nav ms-auto mb-2 mb-sm-0"> -->
+           <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="'/allproduct'">Home</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="'/about'">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="'/contact'">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="'/Cart'">
+              <i class="fas fa-shopping-cart me-1" [routerLink]="'/Cart'"></i> Cart <span
+                class="badge bg bg-success">{{count}}</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="'/order'">Log Out</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+<div class="product-container">
+  <div class="card-container" *ngFor="let product of productsData">
+  <div class="card">
+  <img [src]="'data:image/png;base64,' + product.image" alt="Array-img" >
+  <h6>{{product.productbrand}}</h6>
+  <h3>₹{{ product.price }}</h3>
+  <h4>{{product.color}}</h4>
+  <!-- <p>{{product.dscript}}</p> -->
+  <input type="button" value="Add to cart" style="background-color: rgb(51, 86, 245);"  > <br><br><br>
+  </div>
+  </div>
+  </div>
+  <!-- <header>
+    <div class="header-image"></div>
+    <nav>
+      <ul>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Furniture</a></li>
+        <li><a href="#">Fashion</a></li>
+      </ul>
+    </nav>
+  </header> -->
+  

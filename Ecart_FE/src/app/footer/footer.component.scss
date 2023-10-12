@@ -1,0 +1,39 @@
+footer {
+    background: pink;
+    color: #140f0f;
+    padding: 50px 0;
+    border: 1px solid #141313;
+    // height: 40px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-md-4 {
+    flex: 1;
+    margin-right: 30px;
+
+  }
+  
+  h4 {
+    font-weight: bold;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
