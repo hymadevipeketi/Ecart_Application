@@ -1,0 +1,41 @@
+<app-header></app-header>
+<p-progressSpinner class="progress-spinner" *ngIf="isLoading"></p-progressSpinner>
+<div *ngIf="isLoading" class="loading-message">Loading...</div>
+<div class="container-fluid product-container" *ngIf="!isLoading">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let product of products">
+      <div class="card h-100">
+        <img [src]="product.image" class="card-img-top" alt="No Image" style="height: 300px; object-fit: contain;">
+        <div class="card-body">
+          <p class="card-text">Product Price : ₹{{ product.price }}</p>
+          <p class="card-text">Title :{{product.title}}</p>
+          <p class="card-text">Category :{{product.category}}</p>
+          <p class="card-text">Color :{{product.color}}</p>
+          <p class="card-text">Rating :{{ product.rating.rate}}</p>
+          <p class="card-text">Available : {{product.rating.count}}</p>
+        </div>
+        <div class="card-footer" style="display: flex;justify-content: space-around">
+          <p-button  (click)=addtocart(product.productid) label="Add to cart"></p-button>&nbsp;
+          <p-button  (click)=addtocart(product.productid) label="Cancel"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p-progressSpinner class="progress-spinner" *ngIf="isLoading"></p-progressSpinner>
+<div *ngIf="isLoading" class="loading-message">Loading...</div>
+<div *ngIf="!isLoading" class="product-container">
+  <div class="card-container" *ngFor="let product of data">
+    <div class="card">
+      <img [src]="'data:image/png;base64,' + product.image" alt="Array-img">
+      <h3>{{product.productbrand}}</h3>
+      <h3>₹{{ product.price }}</h3>
+      <h3>{{product.color}}</h3>
+      <button class="btn btn-dark" (click)=addtocart(product.productid)>Add to cart</button>
+    </div>
+  </div>
+</div>
+
+

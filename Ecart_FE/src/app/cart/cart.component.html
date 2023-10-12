@@ -1,0 +1,89 @@
+
+<ng-container *ngIf="cartItems.data">
+<p-table [value]="cartItems.data" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <!-- <th>productid</th> -->
+            <th>Productname</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>Total</th>
+            <th> Image</th>
+            <th>Action</th>
+           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+            <tr>
+            <!-- <th style="width: 12%;">{{data.productid}}</th> -->
+            <td style="width: 12%;">{{data.productname}}</td>
+            <!-- <img [src]="getImageSource(data.Image)" alt="Product Image"> -->
+            <!-- <img [src]="'data:Image/png;base64,' + data.Image" alt="Array-img"> -->
+            <!-- <td><img src="../../assets/shop.png" alt=" Image" width="50%" height="50%"></td>      -->
+            <td style="width: 12%;">{{data.price}}</td>  
+            <td style="width: 12%;">{{data.quantity}}</td>        
+            
+            <td style="width: 12%;">{{data.quantity*data.price}}</td>
+            <!-- <img [src]="data.image" alt="Product Image" width="50%" height="50%"> -->
+            <img [src]="'data:image/png;base64,' + data.image" alt="Array-img">
+            <td>
+                <button (click)="removeItem(data)" class="btn btn-danger" style="color: aqua;background-color: rgb(209, 20, 20);">Remove<i class="fas fa-trash-alt"></i></button>
+                <button label="View Item" (click)="showDialog(data.productid)" class="btn btn-primary" style="background-color: rgb(23, 7, 247);" >View Item</button>
+            </td>
+            
+            
+        </tr>
+      
+    </ng-template>
+    
+</p-table>
+
+<!-- <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button> -->
+<p-dialog header="Product Details" [(visible)]="visible" [modal]="true" [style]="{ width: '60vw',height:'50vh'}" [draggable]="false" [resizable]="false">
+    <p class="m-0">
+
+       Product Name : {{this.data1[0]?.productname}}<br> 
+
+       Price : {{this.data1[0]?.price}}<br>
+       Quantity : {{this.data1[0]?.quantity}}<br>
+       Total Price :{{this.data1[0]?.price}} <br>
+       Product Image :<br>
+       <p-button [ngStyle]="{'float': 'right','margin-top': '50px'}">Confirm to Order</p-button>
+    </p>
+</p-dialog>
+
+
+
+
+<div style="margin-left: 70vw;border-radius: 12%;">
+
+    <strong>Grand Total : {{calculateTotal()}}</strong>&nbsp;&nbsp;&nbsp;<br>
+</div>
+<div style="float: right;margin-top: 13px;">
+    <button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button>&nbsp;&nbsp;
+    <button routerLink="/allproduct" class="btn btn-primary">Shop More</button>&nbsp;&nbsp;
+    <!-- <button routerLink="'/cart/checkout'" class="btn btn-success">Checkout</button> -->
+    <button routerLink="/address" class="btn btn-success">Checkout</button>
+
+    <!-- <button routerLink="'/checkout/address" class="btn btn-success">Checkout</button> -->
+    <!-- <button (click)="proceedToAddress()" class="btn btn-success">Checkout</button> -->
+    <!-- <button (click)="checkout()">Checkout</button> -->
+</div>
+</ng-container>
+
+
+<div class="cart">
+    <ng-container *ngIf="cartItems.data==0">
+      <div class="container">
+        <div class="card">
+          <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+          <img src="https://www.vinsolutions.com/wp-content/uploads/sites/2/vinsolutions/media/Vin-Images/news-blog/Empty_Shopping_Cart_blog.jpg"
+            alt=""><br>
+          <button routerLink="/allproduct" class="btn btn-primary">Shop Now</button>
+        </div>
+      </div>
+    </ng-container>
+
+</div>

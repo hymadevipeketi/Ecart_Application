@@ -1,0 +1,124 @@
+<!-- <div class="payment-container">
+  <h2>Select Payment Method</h2>
+
+  <div class="payment-options">
+    <label>
+      <input type="radio" name="paymentOption" value="upi" [(ngModel)]="selectedPaymentOption">
+      UPI Payment
+    </label>
+    <label>
+      <input type="radio" name="paymentOption" value="card" [(ngModel)]="selectedPaymentOption">
+      Credit/Debit Card Payment
+    </label>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'upi'">
+    <h3>UPI Payment Details</h3>
+    <input type="text" [(ngModel)]="upiId" placeholder="Enter UPI ID">
+    <input type="password" [(ngModel)]="upiPin" placeholder="Enter UPI PIN">
+    <button (click)="verifyAndPay('upi')">Verify and Pay</button>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'card'">
+    <h3>Credit/Debit Card Payment Details</h3>
+    <input type="text" [(ngModel)]="accountNumber" placeholder="Enter Account Number">
+    <input type="password" [(ngModel)]="cvv" placeholder="Enter CVV">
+    <button (click)="sendOTP()">Verify</button>
+    <input type="number" [(ngModel)]="otp" placeholder="Enter OTP">
+    <button (click)="verifyAndPay('card')">Verify and Pay</button>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'cash'">
+    <h3>Cash on Delivery</h3>
+    <button (click)="payOnDelivery()">Pay on Delivery</button>
+  </div>
+</div> -->
+
+
+
+<!-- <div class="payment-container">
+  <h2>Select Payment Method</h2>
+
+  <div class="payment-options">
+    <label>
+      <input type="radio" name="paymentOption" value="upi" [(ngModel)]="selectedPaymentOption">
+      UPI Payment
+    </label>
+    <label>
+      <input type="radio" name="paymentOption" value="card" [(ngModel)]="selectedPaymentOption">
+      Credit/Debit Card Payment
+    </label>
+    <label>
+      <input type="radio" name="paymentOption" value="cash" [(ngModel)]="selectedPaymentOption">
+      Cash on Delivery
+    </label>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'upi'">
+    <h3>UPI Payment Details</h3>
+    <input type="text" [(ngModel)]="upiId" placeholder="Enter UPI ID">
+    <input type="password" [(ngModel)]="upiPin" placeholder="Enter UPI PIN">
+    <button (click)="verifyAndPay('upi')">Verify and Pay</button>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'card'">
+    <h3>Credit/Debit Card Payment Details</h3>
+    <input type="text" [(ngModel)]="accountNumber" placeholder="Enter Account Number">
+    <input type="password" [(ngModel)]="cvv" placeholder="Enter CVV">
+    <button (click)="sendOTP()">Verify</button>
+    <input type="number" [(ngModel)]="otp" placeholder="Enter OTP">
+    <button (click)="verifyAndPay('card')">Verify and Pay</button>
+  </div>
+
+  <div *ngIf="selectedPaymentOption === 'cash'">
+    <h3>Cash on Delivery</h3>
+    <button (click)="payOnDelivery()">Pay on Delivery</button>
+  </div>
+</div> -->
+
+
+
+
+<div class="payment-container">
+  <h2>Payment Options</h2>
+  
+  <div class="payment-options">
+    <label class="payment-option-label">
+      <input type="radio" name="paymentOption" [(ngModel)]="selectedOption" value="upi">
+      <span>UPI Payment</span>
+    </label>
+    <label class="payment-option-label">
+      <input type="radio" name="paymentOption" [(ngModel)]="selectedOption" value="card">
+      <span>Credit/Debit Card</span>
+    </label>
+    <label class="payment-option-label">
+      <input type="radio" name="paymentOption" [(ngModel)]="selectedOption" value="cash">
+      <span>Cash on Delivery</span>
+    </label>
+  </div>
+
+  <div class="payment-option-details">
+    <div *ngIf="selectedOption === 'upi'">
+      <label for="upiId">UPI ID:</label>
+      <input type="text" id="upiId" [(ngModel)]="upiId" placeholder="Enter UPI ID">
+      <button (click)="proceedToUPI()">Proceed</button>
+    </div>
+
+    <div *ngIf="selectedOption === 'card'">
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" [(ngModel)]="accountNumber" placeholder="Enter Account Number">
+      <label for="cvv">CVV:</label>
+      <input type="password" id="cvv" [(ngModel)]="cvv" placeholder="Enter CVV">
+      <button (click)="verifyCard()">Verify</button>
+      <div *ngIf="showOTP">
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" [(ngModel)]="otp" placeholder="Enter OTP">
+        <button (click)="makePayment()">Make Payment</button>
+      </div>
+    </div>
+
+    <div *ngIf="selectedOption === 'cash'">
+      <p class="cash-on-delivery-text">Cash on delivery is available for this order.</p>
+    </div>
+  </div>
+</div>

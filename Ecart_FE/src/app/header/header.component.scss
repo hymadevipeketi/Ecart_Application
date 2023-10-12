@@ -1,0 +1,144 @@
+// .form-control{
+//     border-radius: 5px;
+//     margin-left: 25px;
+//     width:600px;
+// }
+// .search-icon{
+//     z-index: 10;
+// position: absolute;
+// right: 60%;
+// color: rgb(175, 11, 11);
+// top: 53%;;
+// }
+///////////////////////////////////
+ header {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  padding: 5px 15px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-outline-light {
+  border-radius: 5px;
+}
+
+.badge {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    margin-right: 3px;
+  }
+}
+// .product-container{
+//   display: flex;
+// }
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .card-container {
+  width: 300px;
+  height: 450px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .card img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  }
+  
+  .card h6, .card h3, .card h4, .card p {
+  margin: 10px;
+  }
+  
+  .card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  }
+  
+  .welcome-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .welcome-message img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  
+
+
+  header {
+    position: relative;
+  }
+  
+  // .header-image {
+  //   background-image: url('/assets/shopping1.jpg');
+  //   background-size: flex;
+  //   //  width: 100%;
+  //    height: 550px; /* Adjust the height as per your requirement */
+  // }
+  
+  // nav {
+  //   background-color: #f5f5f5;
+  //   padding: 10px 0;
+  // }
+  
+  // ul {
+  //   list-style: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   display: flex;
+  //   justify-content: center;
+  // }
+  
+  // li {
+  //   margin: 0 10px;
+  // }
+  
+  // a {
+  //   text-decoration: none;
+  //   color: #333;
+  // }
+  
